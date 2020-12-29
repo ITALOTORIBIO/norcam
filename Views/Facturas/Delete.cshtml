@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Eliminar Factura";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Facturas
+
+<h3 style="font-weight: 200; color: red; text-align: center;">¿Está seguro que desea eliminar la factura actual?</h3>
+<div>
+    <hr>
+    <dl>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.cod_orden)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.cod_orden)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.archivo)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.archivo)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.fec_fac)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.fec_fac)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.id)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.id)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.total_neto)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.total_neto)
+            </dd>
+        </div>
+    </dl>
+        <div style="text-align: center;">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id"/>
+                <input type="submit" value="Eliminar" class="btn btn-danger"/> |
+                <a asp-action="Index">Atrás</a>
+            </form>
+        </div>
+</div>
