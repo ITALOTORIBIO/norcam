@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+@{
+    Layout="_LayoutCliente";
+}
+
+<div>
+    <label for="">NOMBRE UNIVERSIDAD</label>
+    <table class="table table-hover" style="margin-top: 35px;">
+        <thead>
+            <tr>
+                <th style="text-align: center;"># ORDEN</th>
+                <th style="text-align: center;">FEC. FACTURACIÓN</th>
+                <th style="text-align: center;"># FACTURA</th>
+                <th style="text-align: center;">CONTENIDO</th>
+                <th style="text-align: center;">ESTADO DE PEDIDO</th>
+                <th style="text-align: center;">S/ TOTAL NETO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
