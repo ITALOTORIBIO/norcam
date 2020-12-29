@@ -31,7 +31,7 @@ namespace norcam.Controllers
         {
             return View();
         }
-        
+
         public IActionResult Logueo(Usuario usuario)
         {
             var userLogged= new Usuario();
@@ -44,9 +44,8 @@ namespace norcam.Controllers
                     HttpContext.Session.SetString("State","logged");
                     
                     if(user.Tipo=="U"){
-                        return RedirectToAction("Index", "Ordenes", new { area = "" });
+                        return RedirectToAction("Index", "Usuario", new { area = "" });
                     }else{
-
                         return RedirectToAction("Index", "Ordenes", new { area = "" });
                     }
                 }

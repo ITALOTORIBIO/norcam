@@ -124,5 +124,12 @@ namespace norcam.Controllers
             return RedirectToAction(nameof(Index));
         }
         
+        [HttpPost]
+        public async Task<IActionResult> Vista(int? id)
+        {
+            var orden = await _context.Ordenes
+                .FirstOrDefaultAsync(m => m.id == id); 
+            return PartialView("Detalle",orden);
+        }
     }
 }

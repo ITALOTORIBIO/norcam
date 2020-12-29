@@ -1,49 +1,50 @@
-@{
-    ViewData["Title"] = "Agregar Nuevo Cliente";
-}
-@{
-    Layout="_LayoutCnt";
-}
 @model Cliente
-<h3 style="margin-top: 10px;">NUEVO CLIENTE</h3>
-<div class="modal-body">
-    <div class="container h-100">
-        <form method="post" action="">
-            <div class="row">
-                <div class="form-group col-lg-6">
-                    <label asp-for="razon_social"></label>
-                    <input type="text" asp-for="razon_social" class="form-control" name="razon_social" id="razon_social" />
-                    <span asp-validation-for="razon_social" class="text-danger"></span>  
-                </div>
-                <div class="form-group col-lg-6">
-                    <label asp-for="ruc"></label>
-                    <input type="text" asp-for="ruc" class="form-control" name="ruc" id="ruc">
-                    <span asp-validation-for="ruc" class="text-danger"></span>  
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-6">
-                    <label asp-for="direccion"></label>
-                    <input type="text" asp-for="direccion" class="form-control" name="direccion" id="direccion">
-                    <span asp-validation-for="direccion" class="text-danger"></span>
-                </div>
-                <div class="form-group col-lg-6">
-                    <label asp-for="telefono"></label>
-                    <input type="text" asp-for="telefono" class="form-control" name="telefono" id="telefono">
-                    <span asp-validation-for="telefono" class="text-danger"></span>  
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-6">
-                    <label asp-for="fax"></label>
-                    <input type="text" asp-for="fax" class="form-control" name="fax" id="fax">
-                    <span asp-validation-for="fax" class="text-danger"></span>
-                </div>
-            </div>
-            <div>
-                <input class="btn btn-success" type="submit" name="insert" id="insert" style="margin-top: 10px;" value="Grabar"/>
-            </div>
-        </form>
-    </div>
+
+<!-- Modal -->
+                    <div class="modal fade" id="NuevoCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                  
+
+                        <div class="modal-body">
+                            <div class="container h-100">
+                            <form asp-action="Nuevo" asp-controller="Cliente" method="post">
+                                <div class="form-group">
+                                    <label>Razon Social</label>
+                                    <input type="text" asp-for="razon_social" class="form-control" placeholder="Ej: NORCAM S.A."/>
+                                    <span asp-validation-for="razon_social" class="text-danger"></span>  
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ruc"></label>
+                                    <input type="text" asp-for="ruc" class="form-control" placeholder="Ej: 10102892964"/>
+                                    <span asp-validation-for="ruc" class="text-danger"></span>  
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="direccion"></label>
+                                    <input type="text" asp-for="direccion" class="form-control" placeholder="Ej: Calle Las begonias 123"/>
+                                    <span asp-validation-for="direccion" class="text-danger"></span>  
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="telefono"></label>
+                                    <input type="text" asp-for="telefono" class="form-control" placeholder="Ej: +51 922 653 075"/>
+                                    <span asp-validation-for="telefono" class="text-danger"></span>  
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="fax"></label>
+                                    <input type="text" asp-for="fax" class="form-control" placeholder="Ej: 9987889"/>
+                                    <span asp-validation-for="fax" class="text-danger"></span>  
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+                    </div> 

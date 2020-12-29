@@ -2,13 +2,14 @@
     ViewData["Title"] = "Control Interno";
 }
 
-@model IEnumerable<Cliente>
+@model dynamic
+
 
 @{
     Layout="_LayoutCInt";
 }
 
-
+<div id="PlaceHolderHere"></div>
 
 <div style="margin-top: 15px;">
     <ul class="nav nav-tabs dark">
@@ -37,22 +38,22 @@
             <thead>
                 <tr>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.id)
+                        Id
                     </th>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.razon_social)
+                        Razon Social
                     </th>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.ruc)
+                        Ruc
                     </th>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.direccion)
+                        Direccion
                     </th>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.telefono)
+                        Telefono
                     </th>
                     <th style="text-align: center;">
-                        @Html.DisplayNameFor(model=> model.fax)
+                        Fax
                     </th>
                     <th colspan="2" style="text-align: center; font-weight: bold;">
                         Opciones
@@ -60,7 +61,7 @@
                 </tr>
             </thead>            
             <tbody>
-               @foreach (var cliente in Model)
+               @foreach (Cliente cliente in Model.Cliente)
                {
                    <tr>
                        <td style="text-align: center;">
@@ -97,15 +98,14 @@
         </table>
     </div>
     <div class="col-lg-1">
-        <form action="" method="post">
             <table style="text-align: center;">
                 <tr>
                     <td>
-                        <a asp-controller="Cliente" asp-action="Nuevo"><button style="margin-top: 45px;" type="button" class="btn btn-info">NUEVO</button></a>
-                    </td>                    
+                        <button style="margin-top: 45px;" type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#NuevoCliente" data-url="@Url.Action("Nuevo")">NUEVO</button>                       
+                    </td>                                       
                 </tr>
             </table>
-        </form>
+        
     </div>
 </div>
 
