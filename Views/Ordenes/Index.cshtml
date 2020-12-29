@@ -72,10 +72,17 @@
                             @Html.DisplayFor(ModelItem=> ordenes.contenido)
                         </td>
                         <td>
+<<<<<<< HEAD
                             <form method="post">
                                <button class="btn btn-danger" style="text-align: center;" data-toggle="ajax-modal" data-target="#nuevoCliente" data-url="@Url.Action("Vista")">Ver Detalle</button>
                             </form>
                           
+=======
+                            <form action="" method="post">
+                               <input type="hidden" name ="Id" value="@ordenes.id">
+                               <button class="btn btn-secondary" style="text-align: center;">Ver Detalle</button>
+                           </form>
+>>>>>>> 472b090eb37c6ae70a27b1bf413d849668991ce3
                         </td>
                         <td>
                             <form action="Edit" method="post">
