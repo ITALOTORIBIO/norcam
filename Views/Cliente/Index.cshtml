@@ -83,10 +83,6 @@
                            @Html.DisplayFor(modelItem=> cliente.fax)
                        </td>
                        <td>
-                            <form action="" method="post">
-                               <input type="hidden" name ="Id" value="@cliente.id">
-                               <button class="btn btn-secondary" style="text-align: center;">Ver Detalle</button>
-                           </form>
                         </td>
                        <td style="text-align: center;">
                            <a asp-action="Edit" asp-route-id="@cliente.id">
