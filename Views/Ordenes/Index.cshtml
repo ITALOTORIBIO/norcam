@@ -76,19 +76,18 @@
                             @Html.DisplayFor(ModelItem=> ordenes.contenido)
                         </td>
                         <td>
-                               <button style="margin-top: 15px;" type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{ordenes.id}")">Ver Detalle</button>                            
-                           
+                               <button type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{ordenes.id}")">VER DETALLE</button>                            
                         </td>
                         <td>
                             <form action="Edit" method="post">
                                <input type="hidden" name="Id" value="@ordenes.id">
-                               <button class="btn btn-warning" style="text-align: center;">Editar</button>
+                               <button class="btn btn-warning" style="text-align: center;">EDITAR</button>
                            </form>
                         </td>
                         <td>
                             <form action="Delete" method="post">
                                <input type="hidden" name ="Id" value="@ordenes.id">
-                               <button class="btn btn-danger" style="text-align: center;">Anular</button>
+                               <button class="btn btn-danger" style="text-align: center;">ANULAR</button>
                            </form>
                         </td>
                     </tr>

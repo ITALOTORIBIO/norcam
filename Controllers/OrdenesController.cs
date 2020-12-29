@@ -128,8 +128,7 @@ namespace norcam.Controllers
         {            
             var cliente = _context.Ordenes.Where(m => m.id == id).FirstOrDefault();             
             return PartialView("Detalle",cliente);
-        } 
+        }
         
-       
     }
 }

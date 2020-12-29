@@ -123,5 +123,11 @@ namespace norcam.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Detalle(int id)
+        {            
+            var cliente = _context.Ordenes.Where(m => m.id == id).FirstOrDefault();             
+            return PartialView("Detalle",cliente);
+        }
+
     }
 }

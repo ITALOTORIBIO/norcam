@@ -4,6 +4,10 @@
 
 @model IEnumerable<Facturas>
 @{
+    Facturas factura =new Facturas();
+}   
+
+@{
     Layout="_LayoutCInt";
 }
 
@@ -47,7 +51,7 @@
                     <th style="text-align: center;">
                         @Html.DisplayNameFor(model=> model.total_neto)
                     </th>
-                    <th colspan="2" style="text-align: center; font-weight: bold;">
+                    <th colspan="3" style="text-align: center; font-weight: bold;">
                             Opciones
                     </th>
                 </tr>
@@ -72,21 +76,18 @@
                             @Html.DisplayFor(ModelItem=> facturas.total_neto)
                         </td>
                         <td>
-                            <form action="" method="post">
-                               <input type="hidden" name ="Id" value="@facturas.id">
-                               <button class="btn btn-secondary" style="text-align: center;">Ver Detalle</button>
-                           </form>
+                            <button type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{facturas.id}")">VER DETALLE</button>                            
                         </td>
                         <td>
                             <form action="Edit" method="post">
                                <input type="hidden" name="Id" value="@facturas.id">
-                               <button class="btn btn-warning" style="text-align: center;">Editar</button>
+                               <button class="btn btn-warning" style="text-align: center;">EDITAR</button>
                            </form>
                         </td>
                         <td>
                             <form action="Anular" method="post">
                                <input type="hidden" name ="Id" value="@facturas.id">
-                               <button class="btn btn-danger" style="text-align: center;">Anular</button>
+                               <button class="btn btn-danger" style="text-align: center;">ANULAR</button>
                            </form>
                         </td>
                     </tr>
