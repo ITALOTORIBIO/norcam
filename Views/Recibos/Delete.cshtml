@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Eliminar Recibo";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Recibos
+
+<h3 style="font-weight: 200; color: red; text-align: center;">¿Está seguro que desea eliminar este recibo?</h3>
+<div>
+    <hr>
+    <dl>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.id)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.id)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.fec_pago)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.fec_pago)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.doc_cob)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.doc_cob)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.factura)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.factura)
+            </dd>
+        </div>
+    </dl>
+        <div style="text-align: center;">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id"/>
+                <input type="submit" value="Eliminar" class="btn btn-danger"/> |
+                <a asp-action="Index">Atrás</a>
+            </form>
+        </div>
+</div>
