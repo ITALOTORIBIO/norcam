@@ -37,6 +37,7 @@
             <thead>
                 <tr>
                     <th style="text-align: center;">
+<<<<<<< HEAD
                         @Html.DisplayNameFor(model=> model.id)
                     </th>
                     <th style="text-align: center;">
@@ -53,6 +54,24 @@
                     </th>
                     <th style="text-align: center;">
                         @Html.DisplayNameFor(model=> model.fax)
+=======
+                        # Cliente
+                    </th>
+                    <th style="text-align: center;">
+                        Razón Social
+                    </th>
+                    <th style="text-align: center;">
+                        RUC
+                    </th>
+                    <th style="text-align: center;">
+                        Dirección
+                    </th>
+                    <th style="text-align: center;">
+                        Teléfono
+                    </th>
+                    <th style="text-align: center;">
+                        FAX
+>>>>>>> 15f30293548279a790ea7afff30db729f07d41a9
                     </th>
                     <th colspan="2" style="text-align: center; font-weight: bold;">
                         Opciones
@@ -83,12 +102,12 @@
                        </td>
                        <td style="text-align: center;">
                            <a asp-action="Edit" asp-route-id="@cliente.id">
-                               <button class="btn btn-warning" style="text-align: center;">Editar</button>
+                               <button class="btn btn-warning" style="text-align: center;">EDITAR</button>
                            </a>
                        </td>
                        <td style="text-align: center;">
                            <a asp-action="Delete" asp-route-id="@cliente.id">
-                               <button class="btn btn-danger" style="text-align: center;">Anular</button>
+                               <button class="btn btn-danger" style="text-align: center;">ANULAR</button>
                            </a>
                        </td>
                    </tr>

@@ -1,11 +1,11 @@
- @model Ordenes
+ @model Facturas
  <!-- Modal -->
                     <div class="modal fade" id="Detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detalle de la Orden</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Detalle de la Factura</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -16,10 +16,10 @@
                                 <dl>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_rec)
+                                        @Html.DisplayNameFor(model => model.cod_orden)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_rec)
+                                        @Html.DisplayFor(model => model.cod_orden)
                                     </dd>
                                     </div>
                                     <div class="row">
@@ -32,98 +32,103 @@
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.razon_social)
+                                        @Html.DisplayNameFor(model => model.fec_fac)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.razon_social)
+                                        @Html.DisplayFor(model => model.fec_fac)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.proveedor)
+                                        @Html.DisplayNameFor(model => model.fec_canc)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.proveedor)
+                                        @Html.DisplayFor(model => model.fec_canc)
+                                    </dd>
+                                    </div>
+                                    <h4 style="color: silver; text-align: center;">--- INFORMACIÓN DE ADUANAS ---</h4>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.adval)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.adval)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.dua)
+                                        @Html.DisplayNameFor(model => model.igv_adu)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.dua)
+                                        @Html.DisplayFor(model => model.igv_adu)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.cif)
+                                        @Html.DisplayNameFor(model => model.ipm)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.cif)
+                                        @Html.DisplayFor(model => model.ipm)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.contenido)
+                                        @Html.DisplayNameFor(model => model.reintegro)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.contenido)
+                                        @Html.DisplayFor(model => model.reintegro)
+                                    </dd>
+                                    </div>
+                                    <div>
+                                        <label style="text-align: center;" asp-for="total_liq"></label>
+                                    </div><hr style="width: 80%;">
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.gasto_ope)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.gasto_ope)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.peso)
+                                        @Html.DisplayNameFor(model => model.gasto_admin)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.peso)
+                                        @Html.DisplayFor(model => model.gasto_admin)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.ubicacion)
+                                        @Html.DisplayNameFor(model => model.sup_cont)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.ubicacion)
+                                        @Html.DisplayFor(model => model.sup_cont)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.regimen)
+                                        @Html.DisplayNameFor(model => model.comision)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.regimen)
+                                        @Html.DisplayFor(model => model.comision)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_num)
+                                        @Html.DisplayNameFor(model => model.igv_fact)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_num)
+                                        @Html.DisplayFor(model => model.igv_fact)
                                     </dd>
                                     </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_entrega)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_entrega)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.tc)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.tc)
-                                    </dd>
-                                    </div>
+                                    <label style="text-align: center;" asp-for="total_neto"></label>
                             </div>
 
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" class="btn btn-secondary" data-dismiss="modal">Close</button>                            
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>                            
                         </div>
                         </div>
                     </div>

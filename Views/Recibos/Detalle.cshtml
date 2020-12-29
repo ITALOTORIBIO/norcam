@@ -1,11 +1,11 @@
- @model Ordenes
+ @model Recibos
  <!-- Modal -->
                     <div class="modal fade" id="Detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detalle de la Orden</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Detalle del Recibo</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -16,98 +16,34 @@
                                 <dl>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_rec)
+                                        @Html.DisplayNameFor(model => model.ano)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_rec)
+                                        @Html.DisplayFor(model => model.ano)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.cod_cliente)
+                                        @Html.DisplayNameFor(model => model.mes)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.cod_cliente)
+                                        @Html.DisplayFor(model => model.mes)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.razon_social)
+                                        @Html.DisplayNameFor(model => model.fec_emi)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.razon_social)
+                                        @Html.DisplayFor(model => model.fec_emi)
                                     </dd>
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.proveedor)
+                                        @Html.DisplayNameFor(model => model.fec_pago)
                                     </dt>
                                     <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.proveedor)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.dua)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.dua)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.cif)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.cif)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.contenido)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.contenido)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.peso)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.peso)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.ubicacion)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.ubicacion)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.regimen)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.regimen)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_num)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_num)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.fec_entrega)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.fec_entrega)
+                                        @Html.DisplayFor(model => model.fec_pago)
                                     </dd>
                                     </div>
                                     <div class="row">
@@ -118,10 +54,64 @@
                                         @Html.DisplayFor(model => model.tc)
                                     </dd>
                                     </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.doc_cob)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.doc_cob)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.cheque)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.cheque)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.banco)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.banco)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.dolares)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.dolares)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.observaciones)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.observaciones)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.soles)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.soles)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.igv)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.igv)
+                                    </dd>
                             </div>
 
                         </div>
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" class="btn btn-secondary" data-dismiss="modal">Close</button>                            
                         </div>
