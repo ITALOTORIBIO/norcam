@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Eliminar Orden";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Ordenes
+
+<h3 style="font-weight: 200; color: red; text-align: center;">¿Está seguro que desea eliminar esta orden?</h3>
+<div>
+    <hr>
+    <dl>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.id)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.id)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.fec_rec)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.fec_rec)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.cod_cliente)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.cod_cliente)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.razon_social)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.razon_social)
+            </dd>
+        </div>
+        <div class="row">
+            <dt class = "col-lg-6" style="text-align: right;">
+                @Html.DisplayNameFor(model => model.contenido)
+            </dt>
+            <dd class = "col-lg-6">
+                @Html.DisplayFor(model => model.contenido)
+            </dd>
+        </div>
+    </dl>
+        <div style="text-align: center;">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id"/>
+                <input type="submit" value="Eliminar" class="btn btn-danger"/> |
+                <a asp-action="Index">Atrás</a>
+            </form>
+        </div>
+</div>

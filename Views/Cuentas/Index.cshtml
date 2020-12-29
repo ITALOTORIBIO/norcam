@@ -1,0 +1,67 @@
+ @{
+    ViewData["Title"] = "Cuentas Corrientes";
+}
+
+@{
+    Layout="_LayoutCInt";
+}
+
+<div style="margin-top: 15px;">
+    <ul class="nav nav-tabs dark">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Ordenes" asp-action="Index">ÓRDENES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Facturas" asp-action="Index">FACTURAS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Recibos" asp-action="Index">RECIBOS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" asp-controller="Cuentas" asp-action="Index">CTA. CTES.</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Cliente" asp-action="Index">CLIENTES</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <table class="table table-hover" style="margin-top: 35px;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Código</th>
+                    <th style="text-align: center;">Fecha</th>
+                    <th style="text-align: center;"># Cheque</th>
+                    <th style="text-align: center;">Monto</th>
+                    <th style="text-align: center;">Orden</th>
+                    <th style="text-align: center;">Archivo</th>
+                    <th style="text-align: center;">Girado a</th>
+                    <th style="text-align: center;">Motivo/Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2">
+        <form action="" method="post">
+            <table style="text-align: center;">
+                <tr>
+                    <td><input style="margin-top: 120px;" type="button" class="btn btn-info" value="NUEVO"></td>
+                </tr>
+                <tr>
+                    <td><input style="margin-top: 20px;" type="button" class="btn btn-info" value="MODIFICAR"></td>
+                </tr>
+                <tr>
+                    <td><input style="margin-top: 20px;" type="button" class="btn btn-info" value="ANULAR"></td>
+                </tr>
+                <tr>
+                    <td><input style="margin-top: 20px;" type="button" class="btn btn-info" value="BUSCAR"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+@{
+    ViewData["Title"] = "Crear Nueva Factura";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Facturas
+<h3 style="margin-top: 10px;">NUEVA FACTURA</h3>
+<div class="modal-body">
+    <div class="container h-100">
+        <form method="post" action="">
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="cod_orden"></label>
+                    <input type="date" asp-for="cod_orden" class="form-control" name="cod_orden" id="cod_orden" />
+                    <span asp-validation-for="cod_orden" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="cod_cliente"></label>
+                    <input type="text" asp-for="cod_cliente" class="form-control" name="cod_cliente" id="cod_cliente">
+                    <span asp-validation-for="cod_cliente" class="text-danger"></span>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="fec_fac"></label>
+                    <input type="text" asp-for="fec_fac" class="form-control" name="fec_fac" id="fec_fac">
+                    <span asp-validation-for="fec_fac" class="text-danger"></span>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="fec_canc"></label>
+                    <input type="text" asp-for="fec_canc" class="form-control" name="fec_canc" id="fec_canc">
+                    <span asp-validation-for="fec_canc" class="text-danger"></span>
+                </div>
+            </div>
+            <hr style="width: 80%;">
+            <div>
+                <h4 style="color: silver; text-align: center;">--- INFORMACIÓN DE ADUANAS ---</h4>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label asp-for="adval"></label>
+                        <input type="text" asp-for="adval" class="form-control" name="adval" id="adval">
+                        <span asp-validation-for="adval" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label asp-for="igv_adu"></label>
+                        <input type="text" asp-for="igv_adu" class="form-control" name="igv_adu" id="igv_adu">
+                        <span asp-validation-for="igv_adu" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="ipm"></label>
+                    <input type="text" asp-for="ipm" class="form-control" name="ipm" id="ipm">
+                    <span asp-validation-for="ipm" class="text-danger"></span>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="reintegro"></label>
+                    <input type="text" asp-for="reintegro" class="form-control" name="reintegro" id="reintegro">
+                    <span asp-validation-for="reintegro" class="text-danger"></span>  
+                </div>
+            </div>
+            <div>
+                <label style="text-align: center;" asp-for="total_liq"></label>
+            </div>
+            <hr style="width: 80%;">
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    <label asp-for="gasto_ope"></label>
+                    <input type="date" asp-for="gasto_ope" class="form-control" name="gasto_ope" id="gasto_ope">
+                    <span asp-validation-for="gasto_ope" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-4">
+                    <label asp-for="gasto_admin"></label>
+                    <input type="date" asp-for="gasto_admin" class="form-control" name="gasto_admin" id="gasto_admin">
+                    <span asp-validation-for="gasto_admin" class="text-danger"></span>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label asp-for="sup_cont"></label>
+                    <input type="date" asp-for="sup_cont" class="form-control" name="sup_cont" id="sup_cont">
+                    <span asp-validation-for="sup_cont" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="comision"></label>
+                    <input type="text" asp-for="comision" class="form-control" name="comision" id="comision">
+                    <span asp-validation-for="comision" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="igv_fact"></label>
+                    <input type="text" asp-for="igv_fact" class="form-control" name="igv_fact" id="igv_fact">
+                    <span asp-validation-for="igv_fact" class="text-danger"></span>  
+                </div>
+            </div>
+            <div>
+                <label style="text-align: center;" asp-for="total_neto"></label>
+            </div>
+            <div>
+                <input class="btn btn-success" type="submit" name="insert" id="insert" style="margin-top: 10px;" value="Grabar"/>
+            </div>
+        </form>
+    </div>
+</div>

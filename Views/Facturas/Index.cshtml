@@ -1,0 +1,102 @@
+@{
+    ViewData["Title"] = "Facturas";
+}
+
+@model IEnumerable<Facturas>
+@{
+    Layout="_LayoutCInt";
+}
+
+<div style="margin-top: 15px;">
+    <ul class="nav nav-tabs dark">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Ordenes" asp-action="Index">ÓRDENES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" asp-controller="Facturas" asp-action="Index">FACTURAS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Recibos" asp-action="Index">RECIBOS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Cuentas" asp-action="Index">CTA. CTES.</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Cliente" asp-action="Index">CLIENTES</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-lg-11">
+        <table class="table table-hover" style="margin-top: 35px;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">
+                            @Html.DisplayNameFor(model=> model.cod_orden)
+                    </th>
+                    <th style="text-align: center;">
+                            @Html.DisplayNameFor(model=> model.archivo)
+                    </th>
+                    <th style="text-align: center;">
+                            @Html.DisplayNameFor(model=> model.fec_fac)
+                    </th>
+                    <th style="text-align: center;">
+                            @Html.DisplayNameFor(model=> model.id)
+                    </th>
+                    <th style="text-align: center;">
+                        @Html.DisplayNameFor(model=> model.total_neto)
+                    </th>
+                    <th colspan="2" style="text-align: center; font-weight: bold;">
+                            Opciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var facturas in Model)
+                {
+                    <tr>
+                        <td style="text-align: center;">
+                            @Html.DisplayFor(ModelItem=> facturas.cod_orden)
+                        </td>
+                        <td style="text-align: center;">
+                            @Html.DisplayFor(ModelItem=> facturas.archivo)
+                        </td>
+                        <td style="text-align: center;">
+                            @Html.DisplayFor(ModelItem=> facturas.fec_fac)
+                        </td>
+                        <td style="text-align: center;">
+                            @Html.DisplayFor(ModelItem=> facturas.id)
+                        </td>
+                        <td style="text-align: center;">
+                            @Html.DisplayFor(ModelItem=> facturas.total_neto)
+                        </td>
+                        <td>
+                            <form action="Edit" method="post">
+                               <input type="hidden" name="Id" value="@facturas.id">
+                               <button class="btn btn-warning" style="text-align: center;">Editar</button>
+                           </form>
+                        </td>
+                        <td>
+                            <form action="Anular" method="post">
+                               <input type="hidden" name ="Id" value="@facturas.id">
+                               <button class="btn btn-danger" style="text-align: center;">Anular</button>
+                           </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-1">
+        <form action="" method="post">
+            <table style="text-align: center;">
+                <tr>
+                    <td>
+                        <a asp-controller="Facturas" asp-action="Nuevo"><button style="margin-top: 45px;" type="button" class="btn btn-info">NUEVO</button></a>
+                    </td>                    
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

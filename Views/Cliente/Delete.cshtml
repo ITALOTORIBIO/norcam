@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Cliente
+
+<h3 style="font-weight: 200; color: red; text-align: center;">¿Está seguro que desea eliminar este cliente?</h3>
+    <div>
+            <hr>
+            <dl>
+                <div class="row">
+                <dt class = "col-lg-6" style="text-align: right;">
+                    @Html.DisplayNameFor(model => model.razon_social)
+                </dt>
+                <dd class = "col-lg-6">
+                    @Html.DisplayFor(model => model.razon_social)
+                </dd>
+                </div>
+                <div class="row">
+                <dt class = "col-lg-6" style="text-align: right;">
+                    @Html.DisplayNameFor(model => model.ruc)
+                </dt>
+                <dd class = "col-lg-6">
+                    @Html.DisplayFor(model => model.ruc)
+                </dd>
+                </div>
+                <div class="row">
+                <dt class = "col-lg-6" style="text-align: right;">
+                    @Html.DisplayNameFor(model => model.direccion)
+                </dt>
+                <dd class = "col-lg-6">
+                    @Html.DisplayFor(model => model.direccion)
+                </dd>
+                </div>
+                <div class="row">
+                <dt class = "col-lg-6" style="text-align: right;">
+                    @Html.DisplayNameFor(model => model.telefono)
+                </dt>
+                <dd class = "col-lg-6">
+                    @Html.DisplayFor(model => model.telefono)
+                </dd>
+                </div>
+                <div class="row">
+                <dt class = "col-lg-6" style="text-align: right;">
+                    @Html.DisplayNameFor(model => model.fax)
+                </dt>
+                <dd class = "col-lg-6">
+                    @Html.DisplayFor(model => model.fax)
+                </dd>
+                </div>
+            </dl>
+            <div style="text-align: center;">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id"/>
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                <a asp-action="Index">Atrás</a>
+            </form>
+            </div>
+    </div>
+                  

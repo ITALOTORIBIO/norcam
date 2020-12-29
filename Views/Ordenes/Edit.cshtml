@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "Editar Orden";
+}
+@{
+    Layout="_LayoutCnt";
+}
+@model Ordenes
+<h3 style="margin-top: 10px;">EDITAR ORDEN DE TRABAJO</h3>
+<div class="modal-body">
+    <div class="container h-100">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="id"/>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="fec_rec"></label>
+                    <input type="date" asp-for="fec_rec" class="form-control" name="fec_rec" id="fec_rec" />
+                    <span asp-validation-for="fec_rec" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="peso"></label>
+                    <input type="text" asp-for="peso" class="form-control" name="peso" id="peso">
+                    <span asp-validation-for="peso" class="text-danger"></span>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="dua"></label>
+                    <input type="text" asp-for="dua" class="form-control" name="dua" id="dua">
+                    <span asp-validation-for="dua" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="cod_cliente"></label>
+                    <input type="text" asp-for="cod_cliente" class="form-control" name="cod_cliente" id="cod_cliente">
+                    <span asp-validation-for="cod_cliente" class="text-danger"></span>
+                </div>
+                <div class="form-group col-lg-6">
+                    <strong>razon_social</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="proveedor"></label>
+                    <input type="text" asp-for="proveedor" class="form-control" name="proveedor" id="proveedor">
+                    <span asp-validation-for="proveedor" class="text-danger"></span>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="ubicacion"></label>
+                    <input type="text" asp-for="ubicacion" class="form-control" name="ubicacion" id="ubicacion">
+                    <span asp-validation-for="ubicacion" class="text-danger"></span>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="regimen"></label>
+                    <input type="date" asp-for="regimen" class="form-control" name="regimen" id="regimen">
+                    <span asp-validation-for="regimen" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="fec_num"></label>
+                    <input type="date" asp-for="fec_num" class="form-control" name="fec_num" id="fec_num">
+                    <span asp-validation-for="fec_num" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="fec_entrega"></label>
+                    <input type="text" asp-for="fec_entrega" class="form-control" name="fec_entrega" id="fec_entrega">
+                    <span asp-validation-for="fec_entrega" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="cif"></label>
+                    <input type="text" asp-for="cif" class="form-control" name="cif" id="cif">
+                    <span asp-validation-for="cif" class="text-danger"></span>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="tc"></label>
+                    <input type="text" asp-for="tc" class="form-control" name="tc" id="tc">
+                    <span asp-validation-for="tc" class="text-danger"></span>  
+                </div>
+                <div class="form-group col-lg-6">
+                    <label asp-for="contenido"></label>
+                    <input type="text" asp-for="contenido" class="form-control" name="contenido" id="contenido">
+                    <span asp-validation-for="contenido" class="text-danger"></span>  
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Confirmar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
