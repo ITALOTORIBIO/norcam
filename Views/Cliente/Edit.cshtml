@@ -1,14 +1,14 @@
 @{
-    ViewData["Title"] = "Agregar Nuevo Cliente";
+    ViewData["Title"] = "Editar Cliente";
 }
 @{
     Layout="_LayoutCnt";
 }
 @model Cliente
-<h3 style="margin-top: 10px;">NUEVO CLIENTE</h3>
-<div class="modal-body">
+<h3 style="margin-top: 10px;">EDITAR CLIENTE</h3>
     <div class="container h-100">
-        <form method="post" action="">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="id"/>
             <div class="row">
                 <div class="form-group col-lg-6">
                     <label asp-for="razon_social"></label>
@@ -41,8 +41,12 @@
                 </div>
             </div>
             <div>
-                <input class="btn btn-success" type="submit" name="insert" id="insert" style="margin-top: 10px;" value="Grabar"/>
+                <div>
+                    <div class="form-group">
+                    <input type="submit" value="Confirmar" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
         </form>
     </div>
-                        </div>
+

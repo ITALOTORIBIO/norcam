@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using norcam.Models;
 using norcam.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Dynamic;
 
 namespace norcam.Controllers
 {
@@ -17,34 +16,34 @@ namespace norcam.Controllers
 
         private readonly ApplicationDbContext _context;
 
-        private List<Cliente> listClientes= new List<Cliente>();
-
         public ClienteController(ApplicationDbContext context)
         {
-            _context = context;            
-            listClientes=_context.Cliente.ToList();
-        }
-        
-        public IActionResult Index()
-        {            
-            dynamic modelo= new ExpandoObject();
-            modelo.Cliente=listClientes;
-            return View("Index",modelo);
+            _context = context;
         }
 
-        [HttpGet]
+        public IActionResult Index()
+        {
+            var cliente = _context.Cliente.ToList();
+            return View(cliente);
+        }         
+
+
         public IActionResult Nuevo()
-        {            
-            Cliente cli = new Cliente();
-            return PartialView("Nuevo",cli);
-        }           
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Nuevo(Cliente objCliente)
-        {            
+        {
+            if (ModelState.IsValid) {
+
                 _context.Add(objCliente);
                 _context.SaveChanges();
-                return RedirectToAction("Index");           
+                return RedirectToAction("Index");
+            }
+
+            return View(objCliente);
         }
 
         private bool ClienteExists(int id)
@@ -115,7 +114,6 @@ namespace norcam.Controllers
 
             return View(cliente);
         }
-        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -126,4 +124,4 @@ namespace norcam.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-}
+} 

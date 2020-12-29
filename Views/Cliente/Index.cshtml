@@ -1,15 +1,14 @@
- @{
-    ViewData["Title"] = "Control Interno";
+@{
+    ViewData["Title"] = "Clientes";
 }
 
-@model dynamic
-
+@model IEnumerable<Cliente>
 
 @{
     Layout="_LayoutCInt";
 }
 
-<div id="PlaceHolderHere"></div>
+
 
 <div style="margin-top: 15px;">
     <ul class="nav nav-tabs dark">
@@ -38,30 +37,30 @@
             <thead>
                 <tr>
                     <th style="text-align: center;">
-                        Id
+                        @Html.DisplayNameFor(model=> model.id)
                     </th>
                     <th style="text-align: center;">
-                        Razon Social
+                        @Html.DisplayNameFor(model=> model.razon_social)
                     </th>
                     <th style="text-align: center;">
-                        Ruc
+                        @Html.DisplayNameFor(model=> model.ruc)
                     </th>
                     <th style="text-align: center;">
-                        Direccion
+                        @Html.DisplayNameFor(model=> model.direccion)
                     </th>
                     <th style="text-align: center;">
-                        Telefono
+                        @Html.DisplayNameFor(model=> model.telefono)
                     </th>
                     <th style="text-align: center;">
-                        Fax
+                        @Html.DisplayNameFor(model=> model.fax)
                     </th>
-                    <th colspan="3" style="text-align: center; font-weight: bold;">
+                    <th colspan="2" style="text-align: center; font-weight: bold;">
                         Opciones
                     </th>
                 </tr>
             </thead>            
             <tbody>
-               @foreach (Cliente cliente in Model.Cliente)
+               @foreach (var cliente in Model)
                {
                    <tr>
                        <td style="text-align: center;">
@@ -82,8 +81,6 @@
                        <td style="text-align: center;">
                            @Html.DisplayFor(modelItem=> cliente.fax)
                        </td>
-                       <td>
-                        </td>
                        <td style="text-align: center;">
                            <a asp-action="Edit" asp-route-id="@cliente.id">
                                <button class="btn btn-warning" style="text-align: center;">Editar</button>
@@ -100,14 +97,14 @@
         </table>
     </div>
     <div class="col-lg-1">
+        <form action="" method="post">
             <table style="text-align: center;">
                 <tr>
                     <td>
-                        <button style="margin-top: 45px;" type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#NuevoCliente" data-url="@Url.Action("Nuevo")">NUEVO</button>                       
-                    </td>                                       
+                        <a asp-controller="Cliente" asp-action="Nuevo"><button style="margin-top: 45px;" type="button" class="btn btn-info">NUEVO</button></a>
+                    </td>                    
                 </tr>
             </table>
-        
+        </form>
     </div>
 </div>
-

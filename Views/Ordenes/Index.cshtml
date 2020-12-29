@@ -76,8 +76,137 @@
                             @Html.DisplayFor(ModelItem=> ordenes.contenido)
                         </td>
                         <td>
-                               <button style="margin-top: 15px;" type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{ordenes.id}")">Ver Detalle</button>                            
-                           
+                               <button style="margin-top: 15px;" type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Edit/{ordenes.id}")">Ver Detalle</button>
+                            
+                            <!-- Modal -->
+                    <div class="modal fade" id="Detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container h-100">
+                                <dl>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.fec_rec)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.fec_rec)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.cod_cliente)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.cod_cliente)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.razon_social)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.razon_social)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.proveedor)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.proveedor)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.dua)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.dua)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.cif)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.cif)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.contenido)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.contenido)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.peso)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.peso)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.ubicacion)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.ubicacion)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.regimen)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.regimen)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.fec_num)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.fec_num)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.fec_entrega)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.fec_entrega)
+                                    </dd>
+                                    </div>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.tc)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => orden.tc)
+                                    </dd>
+                                    </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                            
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                         </td>
                         <td>
                             <form action="Edit" method="post">
