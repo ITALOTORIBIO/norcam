@@ -27,6 +27,11 @@ namespace norcam.Controllers
             return View();
         }
 
+        public IActionResult Loginusu()
+        {
+            return View();
+        }
+        
         public IActionResult Logueo(Usuario usuario)
         {
             var userLogged= new Usuario();
@@ -39,7 +44,7 @@ namespace norcam.Controllers
                     HttpContext.Session.SetString("State","logged");
                     
                     if(user.Tipo=="U"){
-                        return RedirectToAction("Index", "Usuario", new { area = "" });
+                        return RedirectToAction("Index", "Ordenes", new { area = "" });
                     }else{
 
                         return RedirectToAction("Index", "Ordenes", new { area = "" });
@@ -53,26 +58,9 @@ namespace norcam.Controllers
 
         public IActionResult Logout(){
             HttpContext.Session.Clear();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
-
-        public IActionResult Registro(){
-            return View();
-        }
-
-        public IActionResult Registrar(Usuario usuario){
-
-            usuario.Tipo="U";
-            if(ModelState.IsValid){
-                _context.Add(usuario);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }else{
-                return RedirectToAction("Registro");
-            }
-
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
