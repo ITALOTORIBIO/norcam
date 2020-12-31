@@ -22,7 +22,7 @@ namespace norcam.Models
         public double cif { get; set; }
         [Display(Name="Contenido")]
         public string contenido { get; set; }
-        [Display(Name="Peso")]
+        [Display(Name="Peso (kg)")]
         public double peso { get; set; }
         [Display(Name="Ubicación")]
         public string ubicacion { get; set; }
