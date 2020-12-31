@@ -57,14 +57,6 @@
                                     </div>
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
-                                        @Html.DisplayNameFor(model => model.igv_adu)
-                                    </dt>
-                                    <dd class = "col-lg-6">
-                                        @Html.DisplayFor(model => model.igv_adu)
-                                    </dd>
-                                    </div>
-                                    <div class="row">
-                                    <dt class = "col-lg-6" style="text-align: right;">
                                         @Html.DisplayNameFor(model => model.ipm)
                                     </dt>
                                     <dd class = "col-lg-6">
@@ -80,7 +72,13 @@
                                     </dd>
                                     </div>
                                     <div>
-                                        <label style="text-align: center;" asp-for="total_liq"></label>
+                                     <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.total_liq)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.total_liq)
+                                    </dd>
                                     </div><hr style="width: 80%;">
                                     <div class="row">
                                     <dt class = "col-lg-6" style="text-align: right;">
@@ -122,7 +120,13 @@
                                         @Html.DisplayFor(model => model.igv_fact)
                                     </dd>
                                     </div>
-                                    <label style="text-align: center;" asp-for="total_neto"></label>
+                                    <div class="row">
+                                    <dt class = "col-lg-6" style="text-align: right;">
+                                        @Html.DisplayNameFor(model => model.total_neto)
+                                    </dt>
+                                    <dd class = "col-lg-6">
+                                        @Html.DisplayFor(model => model.total_neto)
+                                    </dd>
                             </div>
 
                         </div>

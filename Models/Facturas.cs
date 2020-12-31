@@ -26,14 +26,16 @@ namespace norcam.Models
         public double tc_orden { get; set; }
         [Display(Name="Ad-Val US$")]
         public double adval { get; set; }
-        [Display(Name="I. G. V")]
-        public double igv_adu { get; set; }
         [Display(Name="I. P. M")]
         public double ipm { get; set; }
         [Display(Name="Reintegro")]
         public double reintegro { get; set; }
         [Display(Name="Total Líquido US$")]
         public double total_liq { get; set; }
+        
+        [NotMapped]
+        public double Respuesta1 { get; set; }
+
         [Display(Name="Gastos Operativos")]
         public double gasto_ope { get; set; }
         [Display(Name="Gastos Administrativos")]

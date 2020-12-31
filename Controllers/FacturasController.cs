@@ -35,7 +35,10 @@ namespace norcam.Controllers
         public IActionResult Nuevo(Facturas objFactura)
         {
             if (ModelState.IsValid) {
-
+                objFactura.Respuesta1 = objFactura.adval+objFactura.reintegro+objFactura.ipm;
+                objFactura.total_liq=objFactura.Respuesta1;
+                objFactura.igv_fact = (objFactura.gasto_admin+objFactura.gasto_ope+objFactura.sup_cont+objFactura.comision)*0.18;
+                objFactura.total_neto=objFactura.igv_fact+objFactura.gasto_admin+objFactura.gasto_ope+objFactura.sup_cont+objFactura.comision;
                 _context.Add(objFactura);
                 _context.SaveChanges();
                 return RedirectToAction("Index");

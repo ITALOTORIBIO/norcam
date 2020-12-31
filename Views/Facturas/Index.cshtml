@@ -11,6 +11,8 @@
     Layout="_LayoutCInt";
 }
 
+<div id="PlaceHolderHere"></div>
+
 <div style="margin-top: 15px;">
     <ul class="nav nav-tabs dark">
         <li class="nav-item">
@@ -40,9 +42,6 @@
                             @Html.DisplayNameFor(model=> model.cod_orden)
                     </th>
                     <th style="text-align: center;">
-                            @Html.DisplayNameFor(model=> model.archivo)
-                    </th>
-                    <th style="text-align: center;">
                             @Html.DisplayNameFor(model=> model.fec_fac)
                     </th>
                     <th style="text-align: center;">
@@ -64,9 +63,6 @@
                             @Html.DisplayFor(ModelItem=> facturas.cod_orden)
                         </td>
                         <td style="text-align: center;">
-                            @Html.DisplayFor(ModelItem=> facturas.archivo)
-                        </td>
-                        <td style="text-align: center;">
                             @Html.DisplayFor(ModelItem=> facturas.fec_fac)
                         </td>
                         <td style="text-align: center;">
@@ -79,16 +75,14 @@
                             <button type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{facturas.id}")">VER DETALLE</button>                            
                         </td>
                         <td>
-                            <form action="Edit" method="post">
-                               <input type="hidden" name="Id" value="@facturas.id">
-                               <button class="btn btn-warning" style="text-align: center;">EDITAR</button>
-                           </form>
+                            <a asp-action="Edit" asp-route-id="@facturas.id">
+                               <button class="btn btn-warning" style="text-align: center;">Editar</button>
+                           </a>
                         </td>
                         <td>
-                            <form action="Anular" method="post">
-                               <input type="hidden" name ="Id" value="@facturas.id">
-                               <button class="btn btn-danger" style="text-align: center;">ANULAR</button>
-                           </form>
+                            <a asp-action="Delete" asp-route-id="@facturas.id">
+                               <button class="btn btn-danger" style="text-align: center;">Anular</button>
+                           </a>
                         </td>
                     </tr>
                 }
