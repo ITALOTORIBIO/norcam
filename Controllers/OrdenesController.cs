@@ -8,6 +8,9 @@ using Microsoft.Extensions.Logging;
 using norcam.Models;
 using norcam.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using System.Dynamic;
+using Newtonsoft.Json;
 
 namespace norcam.Controllers
 {
@@ -16,19 +19,42 @@ namespace norcam.Controllers
 
         private readonly ApplicationDbContext _context;
 
+        private List<Ordenes> listOrdenes= new List<Ordenes>();
+
+        private List<Cliente> listCliente = new List<Cliente>();
+
         public OrdenesController(ApplicationDbContext context)
         {
             _context = context;
+            listOrdenes=_context.Ordenes.ToList();
+            listCliente=_context.Cliente.ToList();
         }
 
         public IActionResult Index()
         {
-            var orden = _context.Ordenes.ToList();
-            return View(orden);
+            var status=HttpContext.Session.GetString("State");
+            if(status!=null){
+                var user = JsonConvert.DeserializeObject<Usuario>(HttpContext.Session.GetString("SessionUser"));
+                var tipo = user.Tipo;
+                if(tipo=="A"){
+                    dynamic modelo= new ExpandoObject();
+                    modelo.Cliente=listCliente;
+                    modelo.Ordenes=listOrdenes;
+                    return View("Index",modelo);
+                }else{
+                    HttpContext.Session.Clear();
+                    return RedirectToAction("Index","Login");
+                }
+            }else{
+                return RedirectToAction("Index","Login");
+            } 
         }
 
         public IActionResult Nuevo()
         {
+            dynamic modelo= new ExpandoObject();
+            modelo.Cliente=listCliente;
+            modelo.Ordenes=listOrdenes;
             return View();
         }
 

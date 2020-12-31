@@ -11,9 +11,9 @@ namespace norcam.Models
         [Display(Name="Fecha de recepción")]
         public string fec_rec { get; set; }
         [Display(Name="# Cliente")]
-        public Cliente cod_cliente { get; set; }
+        public int cod_cliente { get; set; }
         [Display(Name="Cliente")]
-        public Cliente razon_social { get; set; }
+        public string razon_social { get; set; }
         [Display(Name="Proveedor")]
         public string proveedor { get; set; }
         [Display(Name="D. U. A.")]

@@ -17,5 +17,9 @@ namespace norcam.Data
             : base(options)
         {
         }
+
+        public ApplicationDbContext()
+        {
+        }
     }
 }
