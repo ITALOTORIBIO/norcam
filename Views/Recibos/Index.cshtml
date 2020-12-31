@@ -40,7 +40,7 @@
                             @Html.DisplayNameFor(model=> model.doc_cob)
                         </th>
                         <th style="text-align: center;">
-                            @Html.DisplayNameFor(model=> model.factura)
+                            @Html.DisplayNameFor(model=> model.cod_factura)
                         </th>
                         <th colspan="3" style="text-align: center; font-weight: bold;">
                             Opciones
@@ -61,7 +61,7 @@
                             @Html.DisplayFor(ModelItem=> recibos.doc_cob)
                         </td>
                         <td style="text-align: center;">
-                            @Html.DisplayFor(ModelItem=> recibos.factura)
+                            @Html.DisplayFor(ModelItem=> recibos.cod_factura)
                         </td>
                         <td>
                                <button type="button" class="btn btn-info" data-toggle="ajax-modal" data-target="#Detalle" data-url="@Url.Action($"Detalle/{recibos.id}")">VER DETALLE</button>                            

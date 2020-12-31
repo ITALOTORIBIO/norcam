@@ -52,9 +52,6 @@ namespace norcam.Controllers
 
         public IActionResult Nuevo()
         {
-            dynamic modelo= new ExpandoObject();
-            modelo.Cliente=listCliente;
-            modelo.Ordenes=listOrdenes;
             return View();
         }
 
@@ -62,7 +59,6 @@ namespace norcam.Controllers
         public IActionResult Nuevo(Ordenes objOrden)
         {
             if (ModelState.IsValid) {
-
                 _context.Add(objOrden);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,7 +66,7 @@ namespace norcam.Controllers
 
             return View(objOrden);
         }
-
+        
         private bool OrdenesExists(int id)
         {
             return _context.Ordenes.Any(e => e.id == id);

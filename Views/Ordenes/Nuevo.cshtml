@@ -5,96 +5,87 @@
     Layout="_LayoutCnt";
 }
 
- @model dynamic
-
- @{
-   Ordenes ord = new Ordenes();
- }
+ @model Ordenes
 
 <h3 style="margin-top: 10px;">NUEVA ORDEN DE TRABAJO</h3>
     <div class="container h-100">
         <form method="post" action="">
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.fec_rec"></label>
-                    <input type="date" asp-for="@ord.fec_rec" class="form-control"/>
-                    <span asp-validation-for="@ord.fec_rec" class="text-danger"></span>  
+                    <label asp-for="fec_rec"></label>
+                    <input type="date" asp-for="fec_rec" class="form-control"/>
+                    <span asp-validation-for="fec_rec" class="text-danger"></span>  
                 </div>
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.peso"></label>
-                    <input type="text" asp-for="@ord.peso" class="form-control">
-                    <span asp-validation-for="@ord.peso" class="text-danger"></span>  
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-6">
-                    <label asp-for="@ord.dua"></label>
-                    <input type="text" asp-for="@ord.dua" class="form-control">
-                    <span asp-validation-for="@ord.dua" class="text-danger"></span>
+                    <label asp-for="peso"></label>
+                    <input type="text" asp-for="peso" class="form-control">
+                    <span asp-validation-for="peso" class="text-danger"></span>  
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
-                   <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cod_Cliente
-                        </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/">1</a>
-                                <a class="dropdown-item" href="/">2</a>
-                            </div>
-                    </div>                              
+                    <label asp-for="dua"></label>
+                    <input type="text" asp-for="dua" class="form-control">
+                    <span asp-validation-for="dua" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                   <select name="GAA" id="cars">
+                        <option value="">Cliente</option>
+                        <option value="Pontificia Universidad Católica del Perú">Pontificia Universidad Católica del Perú</option>
+                        <option value="Universidad San Ignacio de Loyola">Universidad San Ignacio de Loyola</option>
+                    </select>                              
+                </div>
+                    <div class="col-lg-6">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label asp-for="proveedor"></label>
+                    <input type="text" asp-for="proveedor" class="form-control">
+                    <span asp-validation-for="proveedor" class="text-danger"></span>
                 </div>
                 <div class="form-group col-lg-6">
-                    <strong>razon_social</strong>
+                    <label asp-for="ubicacion"></label>
+                    <input type="text" asp-for="ubicacion" class="form-control">
+                    <span asp-validation-for="ubicacion" class="text-danger"></span>  
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.proveedor"></label>
-                    <input type="text" asp-for="@ord.proveedor" class="form-control">
-                    <span asp-validation-for="@ord.proveedor" class="text-danger"></span>
+                    <label asp-for="regimen"></label>
+                    <input type="text" asp-for="regimen" class="form-control">
+                    <span asp-validation-for="regimen" class="text-danger"></span>  
                 </div>
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.ubicacion"></label>
-                    <input type="text" asp-for="@ord.ubicacion" class="form-control">
-                    <span asp-validation-for="@ord.ubicacion" class="text-danger"></span>  
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-6">
-                    <label asp-for="@ord.regimen"></label>
-                    <input type="text" asp-for="@ord.regimen" class="form-control">
-                    <span asp-validation-for="@ord.regimen" class="text-danger"></span>  
-                </div>
-                <div class="form-group col-lg-6">
-                    <label asp-for="@ord.fec_num"></label>
-                    <input type="date" asp-for="@ord.fec_num" class="form-control">
-                    <span asp-validation-for="@ord.fec_num" class="text-danger"></span>
+                    <label asp-for="fec_num"></label>
+                    <input type="date" asp-for="fec_num" class="form-control">
+                    <span asp-validation-for="fec_num" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.fec_entrega"></label>
-                    <input type="date" asp-for="@ord.fec_entrega" class="form-control">
-                    <span asp-validation-for="@ord.fec_entrega" class="text-danger"></span>  
+                    <label asp-for="fec_entrega"></label>
+                    <input type="date" asp-for="fec_entrega" class="form-control">
+                    <span asp-validation-for="fec_entrega" class="text-danger"></span>  
                 </div>
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.cif"></label>
-                    <input type="text" asp-for="@ord.cif" class="form-control">
-                    <span asp-validation-for="@ord.cif" class="text-danger"></span>  
+                    <label asp-for="cif"></label>
+                    <input type="text" asp-for="cif" class="form-control">
+                    <span asp-validation-for="cif" class="text-danger"></span>  
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.tc"></label>
-                    <input type="text" asp-for="@ord.tc" class="form-control">
-                    <span asp-validation-for="@ord.tc" class="text-danger"></span>  
+                    <label asp-for="tc"></label>
+                    <input type="text" asp-for="tc" class="form-control">
+                    <span asp-validation-for="tc" class="text-danger"></span>  
                 </div>
                 <div class="form-group col-lg-6">
-                    <label asp-for="@ord.contenido"></label>
-                    <input type="text" asp-for="@ord.contenido" class="form-control">
-                    <span asp-validation-for="@ord.contenido" class="text-danger"></span>  
+                    <label asp-for="contenido"></label>
+                    <input type="text" asp-for="contenido" class="form-control">
+                    <span asp-validation-for="contenido" class="text-danger"></span>  
                 </div>
             </div>
             <div>

@@ -21,7 +21,7 @@ namespace norcam.Models
         [Display(Name="Doc. Cobranza")]
         public string doc_cob { get; set; }
         [Display(Name="Factura")]
-        public Facturas factura { get; set; }
+        public int cod_factura { get; set; }
         [Display(Name="# Cheque")]
         public int cheque { get; set; }
         [Display(Name="Banco")]

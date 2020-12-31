@@ -6,11 +6,11 @@ namespace norcam.Models
     public class Facturas
     {
         [Display(Name="# Orden")]
-        public Ordenes cod_orden { get; set; }
+        public int cod_orden { get; set; }
         [Display(Name="Fec. Factura")]
         public string fec_fac { get; set; }
         [Display(Name="# Cliente")]
-        public Cliente cod_cliente { get; set; }
+        public int cod_cliente { get; set; }
         [Display(Name="Fec. Cancela")]
         public string fec_canc { get; set; }
         [Display(Name="Archivo")]
@@ -19,11 +19,11 @@ namespace norcam.Models
         [Display(Name="# Factura")]
         public int id { get; set; }
         [Display(Name="D. U. A.")]
-        public Ordenes dua { get; set; }
+        public string dua_orden { get; set; }
         [Display(Name="CIF. US$")]
-        public Ordenes cif { get; set; }
+        public double cif_orden { get; set; }
         [Display(Name="T/C S/")]
-        public Ordenes tc { get; set; }
+        public double tc_orden { get; set; }
         [Display(Name="Ad-Val US$")]
         public double adval { get; set; }
         [Display(Name="I. G. V")]
